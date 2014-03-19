@@ -1,7 +1,9 @@
 DigistoreApi::Application.routes.draw do
 
   defaults format: :json do
-    get "/items", to: "items#index"
+    resources :items
+    resources :orders
+    resources :orderitems
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
