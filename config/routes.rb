@@ -1,9 +1,14 @@
 DigistoreApi::Application.routes.draw do
 
+
+
   defaults format: :json do
     resources :items
     resources :orders
     resources :orderitems
+    post "completedOrders", to: "complete_orders#create"
+    get "completedOrders/:id", to: "complete_orders#show"
+
 
   end
   # The priority is based upon order of creation: first created -> highest priority.

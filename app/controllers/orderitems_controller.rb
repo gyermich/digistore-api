@@ -12,7 +12,7 @@ class OrderitemsController < ApplicationController
     name: orderitem_params[:name],
     image: orderitem_params[:image])
     @orderitem.save
-    render :index
+    render :show
   end
 
   def update
@@ -20,18 +20,18 @@ class OrderitemsController < ApplicationController
     @orderitem.update(current_price: params[:orderitem][:current_price],
     quantity: params[:orderitem][:quantity])
 
-    render :index
+    render :show
   end
 
   def destroy
     @orderitem = Orderitem.find(params[:id])
     @orderitem.destroy
-    render :index
+    render :show
   end
 
   def show
-    @orderitems = Orderitem.all
-    render :index
+    @orderitem = Orderitem.find(params[:id])
+    render :show
   end
 
   private
