@@ -7,8 +7,10 @@ class CompleteOrdersController < ApplicationController
        cvv: completed_order_params[:cvv],
        exp: completed_order_params[:exp],
        zip: completed_order_params[:zip],
-       order_id: completed_order_params[:order]
+       order_id: completed_order_params[:order],
+       status: "paid"
        )
+     OrderMailer.completed_order(completed_order_params[:email]).deliver
      render :show
   end
 
