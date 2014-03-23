@@ -7,4 +7,5 @@ json.completedOrder {
   json.exp @completed_order.exp
   json.zip @completed_order.zip
   json.order @completed_order.order_id
+  json.status @completed_order.status
 }
